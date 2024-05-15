@@ -12,7 +12,7 @@ def main():
     end = 100
 
     for i in range(3):
-        random_int = (random.randint(beg, end))
+        random_int = random.randint(beg, end)
         print(f'Question: {random_int}')
         answer = prompt.string('Your answer: ')
 
