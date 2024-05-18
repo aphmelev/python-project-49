@@ -2,37 +2,36 @@
 import random
 import prompt
 
+def gcd_fun(x, y):
+    if(y == 0): # it divide every number
+        return x  # return x
+    else:
+        return gcd_fun(y, x % y)
+
+
 def main():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    print('What is the result of the expression?')
+    print('Find the greatest common divisor of given numbers.')
     count_answer = 0
-    sign = ['+', '-', '*']
     beg = 1
     end = 100
 
     for _ in range(3):
         random_int_one = random.randint(beg, end)
         random_int_two = random.randint(beg, end)
-        random_sign = random.choice(sign)
-        print(f'Question: {random_int_one} {random_sign} {random_int_two}')
+        print(f'Question: {random_int_one} {random_int_two}')
+        num = gcd_fun(random_int_one, random_int_two)
+        print(num)
         answer = prompt.string('Your answer: ')
 
 
-        if random_sign == '+':
-            result = random_int_one + random_int_two
-        elif random_sign == '-':
-            result = random_int_one - random_int_two
-        else:
-            result = random_int_one * random_int_two
-
-
-        if answer == str(result):
+        if answer == str(num):
             print('Correct!')
             count_answer += 1
         else:
-            print(f"'{answer}' is wrong answer;(.Correct answer was '{result}'.")
+            print(f"'{answer}' is wrong answer;(.Correct answer was '{num}'.")
             print(f"Let's try again, {name}!")
             break
     if count_answer == 3:
