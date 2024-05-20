@@ -10,10 +10,8 @@ def gcd_fun(x, y):
         return gcd_fun(y, x % y)
 
 
-def main():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
+def start(username):
+    name = username
     print('Find the greatest common divisor of given numbers.')
     count_answer = 0
     beg = 1

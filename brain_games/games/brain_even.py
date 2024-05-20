@@ -3,10 +3,8 @@ import random
 import prompt
 
 
-def main():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
+def start(username):
+    name = username
     print('Answer "yes" if the number is even, otherwise answer "no".')
     count_answer = 0
     beg = 1
