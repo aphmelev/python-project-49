@@ -3,6 +3,13 @@ import random
 import prompt
 
 
+def gcd_fun(x, y):
+    if y == 0:
+        return x
+    else:
+        return gcd_fun(y, x % y)
+
+
 def main():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
@@ -17,9 +24,7 @@ def main():
         random_int_two = random.randint(beg, end)
         print(f'Question: {random_int_one} {random_int_two}')
         num = gcd_fun(random_int_one, random_int_two)
-        print(num)
         answer = prompt.string('Your answer: ')
-
 
         if answer == str(num):
             print('Correct!')

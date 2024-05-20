@@ -2,12 +2,13 @@
 import random
 import prompt
 
+
 def is_simple(a):
     k = 0
     for i in range(2, a // 2 + 1):
-        if (a % i == 0):
+        if a % i == 0:
             k = k + 1
-    if (k <= 0):
+    if k <= 0:
         return True
     else:
         return False
@@ -24,18 +25,21 @@ def main():
         rand_num = random.randint(1, 100)
         print(f'Question: {rand_num}')
         simple = is_simple(rand_num)
-        print(simple)
         answer = prompt.string('Your answer: ')
 
+        if answer == 'yes' or not simple:
+            opposite_answer = 'no'
+        else:
+            opposite_answer = 'yes'
 
-        if answer.lower() == 'yes' and simple == True:
+        if answer.lower() == 'yes' and simple:
             print('Correct!')
             count_answer += 1
-        elif answer.lower() == 'no' and simple == False:
+        elif answer.lower() == 'no' and not simple:
             print('Correct!')
             count_answer += 1
         else:
-            print(f"'{answer}' is wrong answer;(.Correct answer was '{rand_num}'.")
+            print(f"'{answer}' is wrong answer;(.Correct answer was '{opposite_answer}'.")
             print(f"Let's try again, {name}!")
             break
 

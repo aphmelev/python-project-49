@@ -2,6 +2,7 @@
 import random
 import prompt
 
+
 def progression(start, step, count):
     lst = []
     for _ in range(count):
@@ -27,7 +28,6 @@ def main():
 
         print(f'Question: {" ".join(map(str, lst))}')
         answer = prompt.string('Your answer: ')
-
 
         if answer == str(rand_lst):
             print('Correct!')
