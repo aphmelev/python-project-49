@@ -17,7 +17,9 @@ def start(username):
     count_answer = 0
 
     for _ in range(3):
-        lst = progression(random.randint(1, 11), random.randint(1, 11), random.randint(5, 11))
+        lst = progression(random.randint(1, 11),
+                          random.randint(1, 11),
+                          random.randint(5, 11))
         rand_lst = random.choice(lst)
 
         for i in range(len(lst)):
@@ -31,7 +33,8 @@ def start(username):
             print('Correct!')
             count_answer += 1
         else:
-            print(f"'{answer}' is wrong answer;(.Correct answer was '{rand_lst}'.")
+            print(f"'{answer}' is wrong answer;(.Correct answer was "
+                  f"'{rand_lst}'.")
             print(f"Let's try again, {name}!")
             break
 

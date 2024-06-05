@@ -27,7 +27,8 @@ def start(username):
             print('Correct!')
             count_answer += 1
         else:
-            print(f"'{answer}' is wrong answer;(.Correct answer was '{opposite_answer}'.")
+            print(f"'{answer}' is wrong answer;(.Correct answer was "
+                  f"'{opposite_answer}'.")
             print(f"Let's try again, {name}!")
             break
     if count_answer == 3:
