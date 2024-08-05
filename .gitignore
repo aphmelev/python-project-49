@@ -2,3 +2,4 @@
 .idea/
 demo.cast
 poetry.lock
+dist/
